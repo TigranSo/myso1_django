@@ -1,0 +1,288 @@
+{% extends 'base-page.html' %}
+{% load static %}
+
+{% block title %}
+    Home - Construction Website
+{% endblock title %}
+
+{% block container %}
+	<!-- main content wrapper -->
+	<div class="main-content-wrapper">
+		<!-- content section -->
+		<section class="slider-section">
+			<div class="slider-container">
+				<ul class="site-slider">
+					<li>
+						<div class="slider-img"><img src="{% static '/images/banner-1.jpg' %}" alt="Sldie 1" /></div>
+						<div class="slider-text">
+							<h3>Гарантия свежести
+                      </h3>
+							<p><span>Мы намеренно не имеем складских помещений, поэтому вся продукция поступает к нам ежедневно, что гарантирует ее свежесть.</span></p>
+
+						</div>
+					</li>
+					<li>
+						<div class="slider-img"><img src="{% static '/images/banner-2.jpg' %}" alt="Sldie 2" /></div>
+						<div class="slider-text">
+							<h3>Доставка на дом <br>или в офис
+                        </h3>
+                        <p><span>доставка домашних продуктов производится быстро и в точно оговоренное время.</span></p>
+
+						</div>
+					</li>
+					<li>
+						<div class="slider-img"><img src=".{% static '/images/banner-3.jpg' %}" alt="Sldie 3" /></div>
+						<div class="slider-text">
+							<h3>Бесконтактная доставка и возврат
+                        </h3>
+                        <p><span>Безопасный вариант для доставки продуктов для тех, кто заботится о своем здоровье.</span></p>
+
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<!-- aboutus start -->
+		<section class="home-aboutus">
+			<div class="top-tab-block">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="nav-tab-block">
+								<div class="nav nav-tabs" id="nav-tab" role="tablist">
+									<a class="nav-item nav-link active" id="who-we-tab" data-toggle="tab" href="#who-we" role="tab" aria-controls="who-we" aria-selected="true">
+										<div class="tab-info-block">
+											<div class="tab-info-icon">
+                                                <img src=".{% static '/images/who-we-are.png' %}" alt="img">
+                                            </div>
+											<div class="tab-info-text">
+												<h2>Бекон Ребра</h2>
+												<p></p>
+											</div>
+										</div>
+									</a>
+									<a class="nav-item nav-link" id="our-mission-tab" data-toggle="tab" href="#our-mission" role="tab" aria-controls="our-mission" aria-selected="false">
+										<div class="tab-info-block">
+											<div class="tab-info-icon">
+                                                <img src=".{% static '/images/our-mission.png' %}" alt="img">
+                                            </div>
+											<div class="tab-info-text">
+												<h2>Куриное мясо</h2>
+												<p></p>
+											</div>
+										</div>
+									</a>
+									<a class="nav-item nav-link" id="what-we-tab" data-toggle="tab" href="#what-we" role="tab" aria-controls="what-we" aria-selected="false">
+										<div class="tab-info-block">
+											<div class="tab-info-icon">
+                                                <img src="{% static '/images/what-we-have.png' %}" alt="img">
+                                            </div>
+											<div class="tab-info-text">
+												<h2>Сырое мясо Стейк</h2>
+												<p></p>
+											</div>
+										</div>
+									</a>
+									<a class="nav-item nav-link" id="safety-tab" data-toggle="tab" href="#safety" role="tab" aria-controls="safety" aria-selected="false">
+										<div class="tab-info-block">
+											<div class="tab-info-icon">
+                                                <img src="{% static '/images/safety.png' %}" alt="img">
+                                            </div>
+											<div class="tab-info-text">
+												<h2>Красное мясо</h2>
+												<p></p>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tab-content-block">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 col-lg-6 col-md-6">
+							<div class="about-info-left">
+								<div class="tab-content" id="nav-tabContent">
+									<div class="tab-pane fade show active" id="who-we" role="tabpanel" aria-labelledby="who-we-tab">
+										<div class="tab-content-wrapper"> <img src="{% static '/images/who-we-are.png' %}" alt="img">
+											<h2>Информация</h2> </div>
+									</div>
+									<div class="tab-pane fade" id="our-mission" role="tabpanel" aria-labelledby="our-mission-tab">
+										<div class="tab-content-wrapper"> <img src="{% static '/images/our-mission.png' %}" alt="img">
+											<h2>Информация</h2> </div>
+									</div>
+									<div class="tab-pane fade" id="what-we" role="tabpanel" aria-labelledby="what-we-tab">
+										<div class="tab-content-wrapper"> <img src="{% static '/images/what-we-have.png' %}" alt="img">
+											<h2>Информация</h2> </div>
+									</div>
+									<div class="tab-pane fade" id="safety" role="tabpanel" aria-labelledby="safety-tab">
+										<div class="tab-content-wrapper"> <img src="{% static '/images/safety.png' %}" alt="img">
+											<h2>Информация</h2> </div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-lg-6 col-md-6">
+							<div class="about-home-right-info">
+								<h3 class="sub-heading-small">О нас</h3>
+								<h2 class="main-heading">ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ<br> "МЯСО НОМЕР ОДИН"</h2>
+								<p>Информация будет "О нас". </p> <a class="learn-more-btn" href="{% url 'about' %}">Подробнее</a> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- aboutus end -->
+		<!-- feature end -->
+		<!-- latest project start -->
+		<section class="section latest-project-bg">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-12 col-lg-7">
+						<div class="main-heading-block">
+							<h2 class="main-heading white-color">Наши магазины</h2>
+							<p class="white-color">Мясо №1, сеть оптово-розничных магазинов мясной и молочной продукции.</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12 col-lg-12">
+						<div class="latest-project-wrapper">
+							<!-- Project Carousel -->
+							<div class="latest-project">
+								<!-- Project -->
+								<div>
+									<div class="box">
+										<div class="content">
+											<div class="content-overlay"></div>
+                                            <img class="content-image" src="{% static '/images/img/project-1.jpg' %}" alt="project">
+											<div class="content-details fadeIn-bottom">
+												<h3 class="content-title">Демьяна Бедного, 109, 1 этаж</h3>
+												<p class="content-text">Ежедневно с 09:00 до 20:00
+												Закрыто. Откроется завтра в 09:00</p>  </div>
+										</div>
+									</div>
+								</div>
+								<!-- / Project -->
+								<!-- Project -->
+								<div>
+									<div class="box">
+										<div class="content">
+											<div class="content-overlay"></div>
+                                            <img class="content-image" src="{% static '/images/img/project-2.jpg' %}" alt="project">
+											<div class="content-details fadeIn-bottom">
+												<h3 class="content-title">Избышева, 1</h3>
+												<p class="content-text">Ежедневно с 09:00 до 21:00.</p>  </div>
+										</div>
+									</div>
+								</div>
+								<!-- / Project -->
+								<!-- Project -->
+								<div>
+									<div class="box">
+										<div class="content">
+											<div class="content-overlay"></div>
+                                            <img class="content-image" src="{% static '/images/img/project-3.jpg' %}" alt="project">
+											<div class="content-details fadeIn-bottom">
+												<h3 class="content-title">Льва Толстого, 64</h3>
+												<p class="content-text">Ежедневно с 09:00 до 21:00.</p>  </div>
+										</div>
+									</div>
+								</div>
+								<!-- / Project -->
+								<!-- Project -->
+								<div>
+									<div class="box">
+										<div class="content">
+											<div class="content-overlay"></div>
+                                            <img class="content-image" src="{% static '/images/img/project-4.jpg' %}" alt="project">
+											<div class="content-details fadeIn-bottom">
+												<h3 class="content-title">30 лет Победы, 35, 1 этаж</h3>
+												<p class="content-text">Ежедневно с 09:00 до 20:00
+												Закрыто. Откроется завтра в 09:00.</p>  </div>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="box">
+										<div class="content">
+											<div class="content-overlay"></div>
+                                            <img class="content-image" src="{% static '/images/img/project-6.jpg' %}" alt="project">
+											<div class="content-details fadeIn-bottom">
+												<h3 class="content-title">Щербакова, 172/1</h3>
+												<p class="content-text">Ежедневно с 09:00 до 20:00.</p>  </div>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="box">
+										<div class="content">
+											<div class="content-overlay"></div>
+                                            <img class="content-image" src="{% static '/images/img/view.jpg' %}" alt="project">
+											<div class="content-details fadeIn-bottom">
+												<h3 class="content-title">ТЦ Молодежный Центральный бульвар, 1а, 1 этаж</h3>
+												<p class="content-text">Ежедневно с 09:00 до 21:00.</p>  </div>
+										</div>
+									</div>
+								</div>
+								<!-- / Project -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- latest project end -->
+		<!-- small contactus bar start -->
+		<section class="contactus-bar">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-lg-8 display-flex align-item-center">
+						<div class="contactus-bar-text">
+							<h2>Заказы от 5000 рублей доставим бесплатно!</h2>
+						</div>
+					</div>
+					<div class="col-12 col-lg-4">
+						<div class="contactus-bar-button-block"> <a href="../construct/pages/contact-us.html" class="contactus-bar-btn">Связаться с нами</a> </div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- small contactus bar end -->
+		<!-- special project info start -->
+		<section class="section">
+			<div class="container">
+				<div class="row row-eq-height">
+					<div class="col-12 col-lg-6 col-md-6 item">
+						<div class="special-project-info-img"> <img src="{% static '/images/img/project-management-1.jpg' %}" alt="img"> </div>
+					</div>
+					<div class="col-12 col-lg-6 col-md-6">
+						<div class="special-project-info-wrapper">
+							<h2>Говядина</h2>
+							<hr>
+							<p>Говядина - это мясо крупного рогатого скота (быков, телок, коров, бычков и волов). Качество их мяса зависит от возраста, вида кормов, содержания и пола животного. Выдержка мяса, то есть процесс созревания мяса, а также стресс, который животные испытывают перед забоем, тоже в значительной степени определяют качество мяса.</p> <a href="{% url 'shop' %}" class="special-project-know-btn">Заказать</a> </div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="row row-eq-height">
+					<div class="col-12 col-lg-6 col-md-6 item">
+						<div class="special-project-info-wrapper flex-end">
+							<h2>Баранина</h2>
+							<hr>
+							<p>Человек употребляет в пищу мясо овец и баранов с древних времен. Это вкусное, сочное и диетическое мясо. Безусловно, мясо барашка, даже молодого, калорийнее, чем говядина. Но холестерина в бараньем жире в 2,5 раза меньше чем в говяжьем и в 4 раза меньше чем в свином. Мясо баранины легче усваивается. Оно богато калием, натрием, железом, кальцием, магнием, йодом, витаминами  В12, В2, В1, Е, РР.</p> <a href="{% url 'shop' %}" class="special-project-know-btn">Заказать</a> </div>
+					</div>
+					<div class="col-12 col-lg-6 col-md-6">
+						<div class="special-project-info-img"> <img src="{% static '/images/img/project-managenent-2.jpg' %}" alt="img"> </div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</div>
+    {% endblock container %}

@@ -1,0 +1,81 @@
+{% extends 'base-page.html' %}
+{% load static %}
+
+{% block title %}
+    Shop
+{% endblock title %}
+
+{% block container %}
+ 	<div class="main-content-wrapper">
+		<div class="breadcrumb-section about">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-12 col-lg-5">
+						<div class="breadcrumb-wrapper">
+							<h2>Наш магазин</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
+
+		<div class="section">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-12 col-lg-9 ">
+						<div class="main-heading-block">
+							<h2 class="main-heading">ЛУЧШИЕ ПРЕДЛОЖЕНИЯ</h2>
+							<!-- <p>EXERCITATIONEM ULLAM CORPORIS</p> -->
+						</div>
+					</div>
+				</div>
+				<div>
+					<label class="ddd">Виды мяса</label>
+				</div>
+				<div class="form-group">
+			        <select class="inputSearch1"  id ="product_search" >			        
+			          <option></option>
+			          <option>Легкие</option>
+			          <option>Грудинка</option>
+			          <option>Мякоть задковая</option>
+			          <option>Обрезка говяжья</option>
+			        </select>
+			    </div>
+				<input type="text" class ="inputSearch" id="product_search" placeholder="Поиск..." />
+				<br></br>
+				<div class="row">
+                    {% for product in object_list %}
+					<section id="{{ product.name}}" class="col-12 col-lg-4 col-md-6 item">
+                        <div class="card" style="width: 18rem;">
+                            <form method="post" action="{% url 'add_item_to_cart' product.pk %}">
+                                <img src="{{product.image_url}}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title"><b>{{ product.name}}</b></h5>
+                                    <p class="card-text">
+                                        {{ product.description }}
+                                    </p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Цена за кг: {{ product.price }} руб</li>
+                                    <li class="list-group-item">
+										{% csrf_token %}
+										<label class="form-label" for="id_quantity">Количество:</label>
+										<input type="number" name="quantity" value="1" min="1"
+											   required id="id_quantity"/>
+                                    </li>
+                                </ul>
+                                <div class="card-body">
+                                    <button class="learn-more-btn" type="submit">В корзину</button>
+                                    <a class="contactus-bar-btn f_right" href="{% url 'shop_detail' product.pk %}">Подробно</a>
+                                    <br><br>
+                                </div>
+                            </form>
+                        </div>
+                    </section>               
+                {% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- content end -->
+{% endblock container %}

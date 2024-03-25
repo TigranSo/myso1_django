@@ -1,0 +1,122 @@
+{% extends 'base-page.html' %}
+{% load static %}
+
+{% block title %}
+    About Us - Construction Website
+{% endblock title %}
+
+{% block container %}
+	<!-- content start -->
+	<div class="main-content-wrapper">
+		<section class="breadcrumb-section about">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-12 col-lg-5">
+						<div class="breadcrumb-wrapper">
+							<h2>О нас</h2>
+							<nav>
+								<ul>
+									<li class="breadcrumb-item"><a href="#">Главная</a></li>
+									<li class="breadcrumb-item active"><a href="#">О нас</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="row row-eq-height">
+					<div class="col-12 col-lg-6 col-md-6">
+						<div class="company-overview-wrapper">
+							<h2 class="main-heading m-0">Мясо №1</h2>
+							<hr>
+							<p>будет информация.</p>
+
+						</div>
+					</div>
+					<div class="col-12 col-lg-6 col-md-6">
+						<div class="company-overview-wrapper">
+							<div class="overview-image-top">
+								<div class="overview-top-image item">
+									<img src="{% static 'images/img/project-1.jpg' %}" alt="img">
+								</div>
+								<div class="overview-top-image item">
+									<img src="{% static '/images/img/project-4.jpg' %}" alt="img">
+								</div>
+							</div>
+							<div class="overview-image-bottom item">
+								<img src="{% static '/images/img/project-3.jpg' %}" alt="img">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 col-lg-6 col-md-6 item">
+						<div class="company-overview-wrapper">
+							<h2 class="main-heading m-0">Как мы работаем</h2>
+							<hr>
+							<p>В нашем интернет-магазине вы сможете недорого купить свежую говядину, свинину, курицу, оленину и мясные деликатесы и для дома или офиса. Оформить заказ на мясопродукты можно через корзину сайта, или отправив заявку в свободной форме по электронной почте myasonomer1@mail.ru</p>
+							<p>Так же вы можете позвонить в рабочее время по телефону +123 456 7890 и получить ответы на все вопросы, касающиеся продукции, сотрудничества и сделать заказ.</p>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6 col-md-6">
+						<div class="company-overview-wrapper">
+							<h2 class="main-heading m-0">ИНТЕРНЕТ-МАГАЗИН МЯСО №1</h2>
+							<hr>
+							<div class="collapse-paneel-wrapper">
+								<div class="accordion" id="accordionExample">
+									<div class="card">
+										<div class="card-header" id="headingOne">
+											<h5 class="mb-0">
+                                              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Отличное качество
+                                                <i class="material-icons">expand_more</i>
+                                              </button>
+                                              
+                                            </h5> </div>
+										<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+											<div class="card-body"> Среди хороших российских производителей мы отобрали лучших. Чьи мясопродукты сохраняют вес, вкус и запах мяса. </div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header" id="headingTwo">
+											<h5 class="mb-0">
+                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                Низкая цена
+                                                <i class="material-icons">expand_more</i>
+                                              </button>
+                                              
+                                            </h5> </div>
+										<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+											<div class="card-body"> Прямые договоры поставок и отлаженные бизнес-процессы позволяют нам держать адекватные цены на продукцию. </div>
+										</div>
+									</div>
+									<div class="card">
+										<div class="card-header" id="headingThree">
+											<h5 class="mb-0">
+                                              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                Быстрая доставка
+                                                <i class="material-icons">expand_more</i>
+                                              </button>
+                                              
+                                            </h5> </div>
+										<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+											<div class="card-body"> У нас собственная служба приема, обработки и доставки заказов. Доставим свежую мясопродукцию в ближайшее время. </div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<!-- content end -->
+{% endblock container %}

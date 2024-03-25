@@ -1,0 +1,278 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>{% block title %}Home - Construction Website{% endblock title %}</title>
+	<link rel="shortcut icon" type="image/jpg" href="{% static '/images/favicon.png' %}" />
+	<meta charset="UTF-8">
+	<meta name="description" content="HTML Templates">
+	<meta name="keywords" content="Construction,Building,Tools">
+	<meta name="author" content="Pentabay">
+	<meta name="viewport" content="width=device-width">
+	<!-- Icon link -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+	<!-- Style link -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/assets/owl.carousel.css">
+	<!-- slick slider -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+	<!-- Stylesheet -->
+	<link rel="stylesheet" href="{% static '/css/style.css' %}">
+	<link rel="stylesheet" href="{% static '/css/responsive.css' %}"> </head>
+
+<body>
+	<div id="loading"> <img id="loading-image" src="{% static '/images/loader.svg' %}" alt="Loading..." /> </div>
+	<!-- top header start -->
+	<div class="top-header  d-none d-lg-block">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xl-5 offset-xl-3 col-lg-6 col-md-7 col-12 col-sm-5">
+					<div class="header-top-left"> <span class="d-m-none">
+                                <i class="far fa-envelope"></i>
+                                <a href="mailto:myasonomer1@mail.ru">myasonomer1@mail.ru</a>
+                            </span> <span class="d-m-none">
+                                <i class="fal fa-phone"></i>
+                                <a href="tel:+79323283273">+7 (932) 328-32-73</a>
+                            </span> </div>
+				</div>
+				<div class="col-xl-4 col-lg-6 col-md-12 col-12 col-sm-12">
+					<div class="header-top-right">
+						<div class="header-top-right-flag f_right">
+							<ul>
+                                <li class="language-dropdown dropdown">
+                                    <a href="/" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                	{% if user.is_authenticated %}
+                                		{{user.username}}
+                            		{% else %}
+                                        Войти/Зарегистрироваться
+                            		{% endif %}
+                                    <i class="fas fa-arrow-down"></i></a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="{% url 'login' %}">Войти</a>
+                                        <a class="dropdown-item" href="{% url 'register' %}">Зарегистрироваться</a>
+                                        <a class="dropdown-item" href="{% url 'logout' %}">Выйти</a>
+                                    </div>
+                                </li>
+                            </ul>
+						</div>
+						<div class="header-top-right-social f_right d-md-block">
+							<ul>
+								<li>
+									<a href="#"> <i class="fab fa-facebook-f"></i> </a>
+								</li>
+								<li>
+									<a href="#"> <i class="fab fa-instagram"></i> </a>
+								</li>
+								<li>
+									<a href="#"> <i class="fab fa-youtube"></i> </a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- top header end -->
+	<!-- main header start -->
+	<div class="penta__header header-menu">
+		<div class="container-fluid  d-none d-lg-block">
+			<div class="row">
+				<div class="col-lg-3 col-8 col-md-5">
+					<div class="header-logo">
+						<a href="/"> <img src="{% static '/images/construct-logo.png' %}" alt="logo"> </a>
+					</div>
+				</div>
+				<div class="col-lg-9 d-none d-lg-block">
+					<div class="main-menu">
+						<nav class="main-menu-nav">
+							<ul>
+								<li class="sub-menu-parent" > <a href="/">Главная</a> </li>
+								<li class="sub-menu-parent"><a href="{% url 'shop' %}">Магазин</a></li>
+                                <li class="sub-menu-parent"><a href="{% url 'cart_view' %}">Корзина</a></li>
+								<li class="sub-menu-parent" > <a href="{% url 'about' %}">О нас</a> </li>
+								{% if user.is_staff %}
+                                	<li class="sub-menu-parent"><a href="http://127.0.0.1:8000/admin/">Админ</a></li>
+								{% endif %}
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- main header end -->
+	<!-- mobile header start -->
+	<div class="mobile-header-menu d-lg-none d-block">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-9">
+					<div class="mobile-menu-logo">
+						<a href="/"> <img src="{% static '/images/construct-logo.png' %}" alt="logo"> </a>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="mobile-menu-toggler">
+						<a href="#" data-toggle="collapse" data-target="#navbar-main"> <i class="fal fa-bars"></i> </a>
+					</div>
+				</div>
+				<div id="navbar-main" class="navbar-collapse mobile-collapse-menu collapse">
+					<div class="mobile-menu-wrapper">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-12">
+									<div class="mobile-menu-header">
+										<a href="#" data-toggle="collapse" data-target="#navbar-main">
+                                            <i class="material-icons">close</i>
+                                        </a> <img src="{% static '/images/construct-logo.png' %}" alt="img"> </div>
+								</div>
+								<div class="col-12">
+									<ul class="nav navbar-nav navbar-right mobile-menu">
+										<li> <a href="/" class="mobile-menu-link"> Главная </a> </li>
+										<li> <a href="{% url 'shop' %}">Магазин</a> </li>
+										<li class="sub-menu-parent"><a href="{% url 'cart_view' %}">Корзина</a></li>
+										<li> <a href="{% url 'about' %}">О нас</a> </li>
+										{% if user.is_staff %}
+                                			<li class="sub-menu-parent"><a href="http://127.0.0.1:8000/admin/">Админ</a></li>
+										{% endif %}
+									</ul>
+								</div>
+								<div class="col-12">
+									<div class="mobile-menu-contact">
+										<h2 class="mobile-menu-heading">Контакты</h2>
+										<ul>
+											<li>
+												<a href="#"> <i class="material-icons">map</i> <span>ул. Щербакова, 172/1, Тюмень</span> </a>
+											</li>
+											<li>
+												<a href="tel:+79323283273"> <i class="material-icons">phone</i> <span>+7 (932) 328-32-73</span> </a>
+											</li>
+											<li>
+												<a href="mailto:myasonomer1@mail.ru"> <i class="material-icons">email</i> <span>myasonomer1@mail.ru</span> </a>
+											</li>
+											<ul>
+			                                	<li class="language-dropdown dropdown">
+			                                    	<a href="/" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				                                	{% if user.is_authenticated %}
+				                                		{{user.username}}
+				                            		{% else %}
+				                                        Войти/Зарегистрироваться
+				                            		{% endif %}
+				                                    <i class="fas fa-arrow-down"></i></a>
+				                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				                                        <a class="dropdown-item" href="{% url 'login' %}">Войти</a>
+				                                        <a class="dropdown-item" href="{% url 'register' %}">Зарегистрироваться</a>
+				                                        <a class="dropdown-item" href="{% url 'logout' %}">Выйти</a>
+				                                    </div>
+				                                </li>
+				                            </ul>
+										</ul>
+									</div>
+								</div>
+									<div class="mobile-menu-social-wrapper">
+										<ul>
+											<li>
+												<a href="#"> <i class="fab fa-facebook-f"></i> </a>
+											</li>
+											<li>
+												<a href="#"> <i class="fab fa-instagram"></i> </a>
+											</li>
+											<li>
+												<a href="#"> <i class="fab fa-youtube"></i> </a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- mobile header end -->
+{% block container %}
+
+
+{% endblock container %}
+
+	<!-- footer start -->
+	<footer>
+		<div class="footer-middle">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-12 col-lg-3 col-md-6 item">
+						<div class="footer-block-list">
+							<h2 class="footer-middle-heading">О нас</h2>
+							<p class="footer-middle-text">будет информация</p>
+							<h2 class="footer-middle-heading">информация</h2>
+							<p class="footer-middle-text">информация.</p>  </div>
+					</div>
+					
+					<div class="col-12 col-lg-3 col-md-6 item">
+						<div class="footer-block-list">
+							<h2 class="footer-middle-heading">Контакты</h2>
+							<div class="footercontact-list-item">
+								<div class="footercontact-list-icon"> <i class="fas fa-map-marked-alt"></i> </div>
+								<div class="footercontact-list-info">
+									<h2>Адрес</h2>
+									<p>Льва Толстого, 64
+										<br>Г. Тюмень
+								</div>
+							</div>
+							<div class="footercontact-list-item">
+								<div class="footercontact-list-icon"> <i class="fas fa-phone-alt"></i> </div>
+								<div class="footercontact-list-info">
+									<h2>Контактная информация</h2>
+									<p><a href="tel:+79323283273">+7 (932) 328-32-73</a>
+										<br> <a href="mailto:myasonomer1@mail.ru">myasonomer1@mail.ru</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-3 col-md-6 item">
+						<div class="footer-block-list">
+							<h2 class="footer-middle-heading">Последние события</h2>
+							<div class="footer-post-list">
+								<div class="footer-post-icon">  </div>
+								<div class="footer-post-info">
+									<h2>Потрясающая продукция, вне сомнений
+									Качественно и натурально!</h2>
+									<p>3 декабря 2022</p>
+								</div>
+							</div>
+							<div class="footer-post-list p-20px-t">
+								<div class="footer-post-icon"> </div>
+								<div class="footer-post-info">
+									<h2>Приятно удивил ассортимент, взял свинину, очень вкусно</h2>
+									<p>19 октября 2022</p>
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
+	</footer>
+	<!-- footer end --><a href="#" class="back-to-top"><i class="material-icons">expand_less</i></a>
+	<!-- Script tag -->
+	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.0.0-beta.2.4/owl.carousel.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+	<script src="{% static '/js/main.js' %}"></script>
+	<script src="{% static '/js/search.js' %}"></script>
+    <script>
+        $( document ).ready(function() {
+            console.log( "ready!" );
+            if (window.location.hash == "#getquote") $('#getquote').modal('show');
+        });
+    </script>
+</body>
+
+</html>
